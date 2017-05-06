@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import logo from './logo.svg';
 import './App.css';
+import FirstPage from './components/FirstPage';
 
 class App extends Component {
   render() {
@@ -23,7 +24,7 @@ class App extends Component {
               <p><Link to={`/SecondPage`}>SecondPage</Link></p>
             </div>
           )} />
-          <Route path="/firstpage" render={({ match }) => <div>This is FIRST page</div>} />
+          <Route path="/firstpage" render={({ match }) => <FirstPage />} />
           <Route path="/secondpage" render={({ match }) => <div>This is SECOND page</div>} />
         </div>
       </BrowserRouter>
