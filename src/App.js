@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import logo from './logo.svg';
 import './App.css';
-import FirstPage from './components/FirstPage';
+import GridPage from './components/GridPage';
 
 class App extends Component {
   render() {
@@ -20,12 +20,12 @@ class App extends Component {
           <Route exact path="/" render={() => (
             <div>
               <h3>This is basic routing</h3>
-              <p><Link to={`/FirstPage`}>FirstPage</Link></p>
-              <p><Link to={`/SecondPage`}>SecondPage</Link></p>
+              <p><Link to={`/GridPage`}>GridPage</Link></p>
+              <p><Link to={`/FormPage`}>FormPage</Link></p>
             </div>
           )} />
-          <Route path="/firstpage" render={({ match }) => <FirstPage />} />
-          <Route path="/secondpage" render={({ match }) => <div>This is SECOND page</div>} />
+          <Route path="/gridpage" render={({ match }) => <GridPage />} />
+          <Route path="/formpage" render={({ match }) => <div>This is SECOND page</div>} />
         </div>
       </BrowserRouter>
     );

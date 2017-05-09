@@ -21,16 +21,16 @@ exports[`test renders correctly 1`] = `
     </h3>
     <p>
       <a
-        href="/FirstPage"
+        href="/GridPage"
         onClick={[Function]}>
-        FirstPage
+        GridPage
       </a>
     </p>
     <p>
       <a
-        href="/SecondPage"
+        href="/FormPage"
         onClick={[Function]}>
-        SecondPage
+        FormPage
       </a>
     </p>
   </div>
