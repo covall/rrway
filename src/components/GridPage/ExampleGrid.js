@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Column, Table } from 'react-virtualized';
 import { Link } from 'react-router-dom';
+import ProgressBar from './ProgressBar';
 import 'react-virtualized/styles.css'; // only needs to be imported once
 
 const ExpampleGrid = ({data}) => {
@@ -44,11 +45,12 @@ const ExpampleGrid = ({data}) => {
         dataKey="progress"
         width={1}
         cellRenderer={({ cellData }) => {
-          if (cellData === undefined) {
-              return null;
-            } else {
-              return cellData;
-            }
+          // if (cellData === undefined) {
+          //     return null;
+          //   } else {
+          //     return cellData;
+          //   }
+          return <ProgressBar progress={cellData} />
         }}
         flexGrow={1}
       />
