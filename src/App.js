@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 import GridPage from './components/GridPage';
+import FormPage from './components/FormPage';
 
 class App extends Component {
   render() {
@@ -25,7 +26,7 @@ class App extends Component {
             </div>
           )} />
           <Route path="/gridpage" render={({ match }) => <GridPage />} />
-          <Route path="/formpage" render={({ match }) => <div>This is SECOND page</div>} />
+          <Route path="/formpage" render={({ match }) => <FormPage />} />
         </div>
       </BrowserRouter>
     );
