@@ -1,0 +1,28 @@
+exports[`test renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "position": "relative",
+    }
+  }>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#AEAEAE",
+        "height": 10,
+        "width": "100%",
+      }
+    } />
+  <div
+    style={
+      Object {
+        "backgroundColor": "green",
+        "height": 10,
+        "position": "absolute",
+        "top": 0,
+        "transition": "width 0.2s",
+        "width": "25%",
+      }
+    } />
+</div>
+`;
