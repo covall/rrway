@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 import ProgressBar from './ProgressBar';
 import 'react-virtualized/styles.css'; // only needs to be imported once
 
-const ExpampleGrid = ({data}) => {
+import LinkToEditModal from './LinkToEditModal';
+import LinkToOtherModal from './LinkToOtherModal';
+
+const ExpampleGrid = ({data, modalOpen}) => {
   return (
     <Table
       width={600}
@@ -45,11 +48,6 @@ const ExpampleGrid = ({data}) => {
         dataKey="progress"
         width={1}
         cellRenderer={({ cellData }) => {
-          // if (cellData === undefined) {
-          //     return null;
-          //   } else {
-          //     return cellData;
-          //   }
           return <ProgressBar progress={cellData} />
         }}
         flexGrow={1}
@@ -60,8 +58,20 @@ const ExpampleGrid = ({data}) => {
         width={1}
         cellRenderer={({ cellData, rowData }) => {
           if (cellData === true) {
+            if (rowData.id === 2) { // example logic - should be something meaningful
+              // Popup with some content
+              return (
+                <LinkToOtherModal />
+              )
+            }
+            if (rowData.id === 4) { // example logic - should be something meaningful
+              // link with modal to edit data
+              return <LinkToEditModal />
+            }
+            // normal link to rounte
             return <Link to={`/FormPage/${rowData.id}`}>run</Link>
           } else {
+            // inactive
             return <span style={{ opacity: 0.2 }}>run</span>
           }
         }}
