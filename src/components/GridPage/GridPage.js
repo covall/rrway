@@ -19,7 +19,7 @@ class GridPage extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
+    this.interval =setInterval(() => {
       this.setState((prevState) => {
         const newState = prevState.data.map((d, i) => ({
             ...d,
@@ -32,6 +32,12 @@ class GridPage extends React.Component {
       })
     }, 500)
   }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+  
+  
   
 
   render () {
